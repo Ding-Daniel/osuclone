@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Rhythm (Deterministic)</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header id="topbar">
+        <div class="left">
+          <div class="title">Bubble Rhythm</div>
+          <div class="subtitle">Deterministic patterns • Click or press <kbd>E</kbd></div>
+        </div>
+
+        <div class="right">
+          <button id="btnStart" type="button">Start</button>
+          <button id="btnRestart" type="button" disabled>Restart</button>
+          <button id="btnPause" type="button" disabled>Pause</button>
+        </div>
+      </header>
+
+      <main id="stage">
+        <canvas id="game"></canvas>
+
+        <div id="hud">
+          <div class="hud-row">
+            <div>Score: <span id="score">0</span></div>
+            <div>Combo: <span id="combo">0</span></div>
+            <div>Acc: <span id="acc">100.00%</span></div>
+          </div>
+          <div class="hud-row small">
+            <div>P: <span id="pCnt">0</span></div>
+            <div>G: <span id="gCnt">0</span></div>
+            <div>O: <span id="oCnt">0</span></div>
+            <div>M: <span id="mCnt">0</span></div>
+          </div>
+          <div class="hud-row small">
+            <div>Time: <span id="time">0.00s</span></div>
+            <div>Notes: <span id="notesLeft">0</span> left</div>
+          </div>
+        </div>
+
+        <div id="centerPrompt">
+          <div class="promptCard">
+            <div class="promptTitle">Ready</div>
+            <div class="promptText">
+              Hit bubbles within the timing window.<br />
+              Input: Click or press <kbd>E</kbd> (click-at-cursor).
+            </div>
+            <div class="promptText subtle">
+              Overlap rule: bubble under cursor with smallest timing error is selected.
+            </div>
+            <div class="promptHint">Press Start</div>
+          </div>
+        </div>
+
+        <div id="toast" aria-live="polite"></div>
+      </main>
+
+      <footer id="footer">
+        <div class="footLeft">
+          <span class="pill">Static GitHub Pages</span>
+          <span class="pill">Deterministic charts</span>
+          <span class="pill">Canvas</span>
+        </div>
+        <div class="footRight">
+          <span class="small">Edit patterns in <code>main.js</code> → <code>buildBeatmap()</code></span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
